@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DOM practice</title>
+</head>
+<body>
+
+  <input type="text" placeholder="Name" class="js-name-input" onkeydown="
+    handleKeyDown(event);
+  ">
+
+  <button onclick="
+    displayName();
+  ">Submit</button>
+
+  <p class="js-display-name"></p>
+
+  <script>
+    function displayName() {
+      // Get the input element
+      const inputElement = document.querySelector('.js-name-input');
+      
+      // Get the text inside the input
+      const name = inputElement.value;
+
+      // Display the text on the page
+      document.querySelector('.js-display-name')
+        .innerHTML = `Your name is: ${name}`;
+    }
+
+    // 9e: Function to handle the "Enter" key
+    function handleKeyDown(event) {
+      if (event.key === 'Enter') {
+        displayName();
+      }
+    }
+  </script>
+
+</body>
+</html>
